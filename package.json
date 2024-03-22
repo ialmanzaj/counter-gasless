@@ -1,13 +1,17 @@
 {
-  "name": "@prb/foundry-template",
-  "description": "Foundry-based template for developing Solidity smart contracts",
+  "name": "gasless",
   "version": "1.0.0",
-  "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://github.com/PaulRBerg"
-  },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.1"
+    "@gelatonetwork/relay-context": "^3.2.0",
+    "@openzeppelin/contracts": "^5.0.1",
+    "@gelatonetwork/relay-sdk": "^5.5.0",
+    "@types/node": "^18.11.9",
+    "dotenv": "^16.0.3",
+    "ethers": "6.7.0",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.1",
+    "viem": "^1.9.2",
+    "typescript": "^4.8.4"
   },
   "devDependencies": {
     "@prb/test": "^0.6.4",
@@ -15,17 +19,9 @@
     "prettier": "^3.0.0",
     "solhint": "^3.6.2"
   },
-  "keywords": [
-    "blockchain",
-    "ethereum",
-    "forge",
-    "foundry",
-    "smart-contracts",
-    "solidity",
-    "template"
-  ],
   "private": true,
   "scripts": {
+    "sponsoredCall":"ts-node examples-sdk/sponsoredCallERC2771.ts",
     "clean": "rm -rf cache out",
     "build": "forge build",
     "lint": "bun run lint:sol && bun run prettier:check",
